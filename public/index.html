@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Giveaway Setups — Web UI</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: 24px auto; padding: 8px; }
+    input, textarea, select { width: 100%; padding: 8px; margin: 6px 0; box-sizing: border-box; }
+    button { padding: 8px 12px; margin: 6px 0; }
+    .card { border: 1px solid #ddd; padding: 12px; border-radius: 8px; margin-bottom: 12px; }
+    label { font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Giveaway Setups</h1>
+  <div class="card">
+    <h3>Create a Setup</h3>
+    <label for="name">Name</label>
+    <input id="name" placeholder="setup name (use in $start {name})" />
+    <label for="desc">Description</label>
+    <input id="desc" placeholder="short description" />
+    <label for="collect">Collect duration (seconds)</label>
+    <input id="collect" type="number" value="30" />
+    <label for="baseEntries">Base entries per user</label>
+    <input id="baseEntries" type="number" value="1" />
+    <label for="roleEntries">Role entries JSON (example: [{"roleId":"123","entries":3}])</label>
+    <textarea id="roleEntries" rows="4">[]</textarea>
+    <button id="create">Create setup</button>
+  </div>
+
+  <div class="card">
+    <h3>Existing Setups</h3>
+    <div id="setupsList">Loading...</div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
